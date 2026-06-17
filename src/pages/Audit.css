@@ -1,0 +1,129 @@
+.audit-grid-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  padding: 5rem 0;
+}
+
+.audit-form-card {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(46, 134, 193, 0.15);
+}
+
+.audit-form-card h2 {
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.audit-form-card p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Row wrapper for form layout grid (e.g. side by side inputs) */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* What's Included sidebar */
+.audit-value-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.audit-value-pane h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.audit-benefit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.audit-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(46, 134, 193, 0.08);
+}
+
+.audit-benefit-icon {
+  background-color: var(--light-bg);
+  color: var(--teal-accent);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(var(--teal-accent-rgb), 0.2);
+}
+
+.audit-benefit-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: var(--primary-navy);
+}
+
+.audit-benefit-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.audit-security-box {
+  background-color: var(--primary-navy);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  margin-top: 1rem;
+  border-left: 5px solid var(--teal-accent);
+}
+
+.audit-security-box h4 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.audit-security-box p {
+  font-size: 0.9rem;
+  color: var(--light-bg);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .audit-grid-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .audit-form-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

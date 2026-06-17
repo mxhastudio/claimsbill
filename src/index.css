@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Colors */
+  --primary-navy: #021046;
+  --primary-navy-rgb: 2, 16, 70;
+  --medical-blue: #1E56A0;
+  --medical-blue-rgb: 30, 86, 160;
+  --teal-accent: #D4B483;
+  --teal-accent-rgb: 212, 180, 131;
+  --light-bg: #FAF7EE;
+  --white: #FFFFFF;
+  --cream-card: #FFFDF9;
+  --text-dark: #1A2530;
+  --text-muted: #627D98;
+  
+  /* Layout & Spacing */
+  --container-width: 1200px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 4px 10px rgba(2, 16, 70, 0.05);
+  --shadow-md: 0 8px 24px rgba(2, 16, 70, 0.08);
+  --shadow-lg: 0 16px 40px rgba(2, 16, 70, 0.12);
+  --border-radius-sm: 30px; /* Pill buttons and tags */
+  --border-radius-md: 16px; /* Cards */
+  --border-radius-lg: 24px; /* Big boxes */
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-navy);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Styling */
+.section {
+  padding: 5rem 0;
+}
+.section-dark {
+  background-color: var(--primary-navy);
+  color: var(--white);
+}
+.section-dark h2 {
+  color: var(--white);
+}
+.section-light {
+  background-color: var(--light-bg);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
+}
+.section-header h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+.section-dark .section-header p {
+  color: var(--light-bg);
+  opacity: 0.85;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: 2px solid transparent;
+  gap: 0.5rem;
+}
+.btn-primary {
+  background-color: var(--medical-blue);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background-color: #143F75;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 86, 160, 0.3);
+}
+.btn-secondary {
+  background-color: var(--primary-navy);
+  color: var(--white);
+}
+.btn-secondary:hover {
+  background-color: #061527;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 43, 92, 0.3);
+}
+.btn-outline-teal {
+  background-color: transparent;
+  border-color: var(--teal-accent);
+  color: var(--teal-accent);
+}
+.btn-outline-teal:hover {
+  background-color: var(--teal-accent);
+  color: var(--primary-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 180, 131, 0.25);
+}
+.btn-outline-blue {
+  background-color: transparent;
+  border-color: var(--medical-blue);
+  color: var(--medical-blue);
+}
+.btn-outline-blue:hover {
+  background-color: var(--medical-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 86, 160, 0.2);
+}
+.btn-outline-white {
+  background-color: transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+.btn-outline-white:hover {
+  background-color: var(--white);
+  color: var(--primary-navy);
+  transform: translateY(-2px);
+}
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* Badge/Eyebrow */
+.eyebrow {
+  font-family: 'Poppins', sans-serif;
+  color: var(--teal-accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.section-dark .eyebrow {
+  color: var(--teal-accent);
+}
+
+/* Card Styles */
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(46, 134, 193, 0.1);
+  transition: var(--transition-smooth);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(46, 134, 193, 0.25);
+}
+
+/* Scroll Animation Classes */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Specific Page Header Styles (Hero sections) */
+.page-hero {
+  background-image: url('https://images.unsplash.com/photo-1624727828489-a1e03b79bba8?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  padding: 6.5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero h1 {
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+.page-hero p {
+  font-size: 1.2rem;
+  color: var(--light-bg);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(2, 16, 70, 0.85); /* Deep Navy Overlay */
+  z-index: 1;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(46, 134, 193, 0.15);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--white);
+  color: var(--text-dark);
+  transition: var(--transition-smooth);
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--medical-blue);
+  box-shadow: 0 0 0 4px rgba(46, 134, 193, 0.15);
+}
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Trust Pill list */
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+}
+.check-list li svg {
+  color: var(--teal-accent);
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+  .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .page-hero {
+    padding: 5rem 0;
+  }
+  .page-hero h1 {
+    font-size: 2.25rem;
+  }
+}

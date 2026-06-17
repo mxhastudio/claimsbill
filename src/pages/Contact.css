@@ -1,0 +1,149 @@
+.contact-grid-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  padding: 5rem 0;
+}
+
+.contact-form-card {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(46, 134, 193, 0.15);
+  position: relative;
+}
+
+.contact-form-card h2 {
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-card p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Success View state */
+.form-success-container {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.success-icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(var(--teal-accent-rgb), 0.15);
+  color: var(--teal-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  border: 2px solid rgba(var(--teal-accent-rgb), 0.3);
+}
+
+.form-success-container h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.form-success-container p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Right Pane details */
+.info-section-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-detail-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background-color: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(46, 134, 193, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.contact-detail-card:hover {
+  border-color: var(--teal-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-detail-icon {
+  background-color: var(--white);
+  color: var(--medical-blue);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-detail-text h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.contact-detail-text p,
+.contact-detail-text a {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.contact-detail-text a:hover {
+  color: var(--teal-accent);
+}
+
+/* Callout Box (Calendly or HIPAA) */
+.contact-callout-box {
+  background-color: var(--primary-navy);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  margin-top: 2rem;
+  border-left: 5px solid var(--teal-accent);
+}
+
+.contact-callout-box h4 {
+  color: var(--white);
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-callout-box p {
+  font-size: 0.95rem;
+  color: var(--light-bg);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contact-grid-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .contact-form-card {
+    padding: 2rem;
+  }
+}
